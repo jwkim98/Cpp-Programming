@@ -10,8 +10,8 @@ set(GLOB APP_HEADERS "Sources/*.hpp")
 include_directories(Headers)
 add_executable(Cpp_Weak1 Sources/main.cpp
         Headers/ExampleClass.hpp
-        Headers/UnorderedMap.hpp
+        Headers/YourOwnClass.hpp
         Sources/ExampleClass.cpp
-        Sources/UnorderedMap.cpp
+        Sources/YourOwnClass.cpp
         ${APP_SRC}
         ${APP_HEADERS})
