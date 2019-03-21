@@ -32,5 +32,6 @@ int main(int argc, char** argv)
     delete[] ptr;
      */
 
+	while (true);
     return 0;
 }
