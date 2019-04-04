@@ -21,24 +21,31 @@ struct structure{
 int main()
 {
 
-    MyClass myClass1 = MyClass(1);
-    MyClass myClass2(2);
-    MyClass myClass3(3);
-
-    /// MyClass myClass3 = (myClass2.operator=(myClass1));
-
-    MyClass myClass4 = (myClass2 + myClass1 + myClass3);
-
-    /// MyClass myClass4 = add(myClass2, add(myClass1, myClass3)); (JAVA == TRASH)
-
-//    MyClass myClass3;
-//    myClass3 = (myClass1 + myClass2);
+//    MyClass myClass1 = MyClass(1);
+//    MyClass myClass2(2);
+//    MyClass myClass3(3);
 //
-//    myClass1 + myClass2 + myClass3;
+//    /// MyClass myClass3 = (myClass2.operator=(myClass1));
+//
+//    MyClass myClass4 = (myClass2 + myClass1 + myClass3); //myClass1.operator+(myClass2.operator+(myClass3));
+//
+//    myClass1 + myClass2;
+//
+//    MyClass myClass5 = myClass1;
+//
+//    // MyClass myClass4 = add(myClass2, add(myClass1, myClass3)); (JAVA == TRASH)
+//
+//   // MyClass myClass3;
+//    myClass3 = (myClass1 + myClass2);
 
-    // std::function<void(int)> func = [](int arg1){std::cout<<"Lambda!"<<std::endl;};
 
-    // add(myClass1, add(myClass2, myClass3)); JAVA
+Hero* hero = new Ironman(100);
+Hero* hero2 = new Thor(150);
+
+hero2->Fly();
+
+delete hero2;
+
 
     return 0;
 }

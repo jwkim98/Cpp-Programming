@@ -10,7 +10,7 @@ namespace CppWeek2 {
     MyClass::MyClass(int number)
             :_number(number)
     {
-        //_number = number;
+        _number = number;
         std::cout << "Constructor called!" << std::endl;
     }
 

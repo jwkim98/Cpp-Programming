@@ -8,31 +8,52 @@
 #include <iostream>
 
 namespace Inheritance {
+
 class Hero {
 
 public:
-  Hero(int number);
+  Hero(int justice,int braveness,int power);
 
   Hero(Hero &_myclass);
 
-  /// Abstract class
-  virtual void Fly() = 0;
+  Hero();
 
-  ~Hero();
+  /// Abstract class
+  virtual void Fly();
+
+  void SaveEarth();
+  // Destructor should be virtual if it was inherited by another class
+  virtual ~Hero();
 
 protected:
-  int _member = 0;
+  int _justice = 50;
+  int _bravery = 100;
+  int _power = 200;
 };
 
-class Ironman : public Hero {
+
+class Mark7
+{
 public:
-  Ironman(int number);
+    void activateArcReactor();
+    int ArcReactor;
+};
+
+
+class Jarvis
+{
+
+};
+
+class Ironman : public Hero, private Mark7, private Jarvis {
+public:
+  Ironman(int justice);
 
   ~Ironman();
 
-  void Fly() override;
+  //void Fly()  override;
 
-  void ShootRazer();
+  void ShootLaser();
 };
 
 class Tony : public Ironman {
@@ -42,12 +63,16 @@ public:
 
 class Thor : public Hero {
 public:
-  Thor(int number);
+  Thor(int justice);
 
   ~Thor();
 
   void Fly() override;
+
+//private:
+//    Foo foo;
 };
+
 } // namespace Inheritance
 
 #endif // CPPSTUDY_INHERITANCE_HPP

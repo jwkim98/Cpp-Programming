@@ -5,25 +5,38 @@
 #include "../includes/Inheritance.hpp"
 
 namespace Inheritance {
-Hero::Hero(int number) : _member(number) {
+
+Hero::Hero(int justice, int braveness, int power)
+    : _justice(justice), _bravery(braveness), _power(power) {
   std::cout << "New Hero!" << std::endl;
 }
 
-Hero::Hero(Hero &_myclass) { _member = _myclass._member; }
+Hero::Hero() {}
+
+Hero::Hero(Hero &_myclass) { _justice = _myclass._justice; }
 
 Hero::~Hero() { std::cout << "Bye Bye Hero!" << std::endl; }
 
-Ironman::Ironman(int number) : Hero(number) {
+void Hero::Fly() { std::cout << "Default fly" << std::endl; }
+
+void Hero::SaveEarth() { std::cout << "I SAVED EARTH!!" << std::endl; }
+
+void Mark7::activateArcReactor() { std::cout << "Activate Mark7" << std::endl; }
+
+Ironman::Ironman(int justice) : Hero(justice, 30, 70), Mark7(), Jarvis() {
   std::cout << "I am Iron man!" << std::endl;
 }
 
 Ironman::~Ironman() { std::cout << "Bye Bye Iron Man!!" << std::endl; }
 
-void Ironman::Fly() { std::cout << "Iron man flies!" << std::endl; }
+//void Ironman::Fly() { std::cout << "Iron man flies!" << std::endl; }
 
-void Ironman::ShootRazer() { std::cout << " Beam! " << std::endl; }
+void Ironman::ShootLaser() {
+  activateArcReactor();
+  std::cout << " Beam! " << std::endl;
+}
 
-Thor::Thor(int number) : Hero(number) {
+Thor::Thor(int justice) : Hero(justice, 100, 100) {
   std::cout << "I am Thor!!" << std::endl;
 }
 
@@ -31,8 +44,6 @@ Thor::~Thor() { std::cout << "Bye Bye Thor!! " << std::endl; }
 
 void Thor::Fly() { std::cout << "Thor flies!" << std::endl; }
 
-Tony::Tony() : Ironman(0)
-{
-}
+Tony::Tony() : Ironman(0) {}
 
 } // namespace Inheritance

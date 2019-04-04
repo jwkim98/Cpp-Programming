@@ -20,18 +20,16 @@ namespace CppWeek2
         explicit MyClass(int number);
         /// Copy constructor
         MyClass(MyClass& rhs);
-
-        /// Copy-assign operator
-        MyClass& operator=(const MyClass& rhs);
-
         /// Move constructor
         MyClass(MyClass &&rhs) noexcept;
 
         ~MyClass();
 
+        /// Copy-assign operator
+        MyClass& operator=(const MyClass& rhs);
+
         /// Move assign operator
         MyClass& operator=(MyClass&& rhs) noexcept;
-
 
         /// Operators
         MyClass operator+(const MyClass &rhs) const;
@@ -55,6 +53,8 @@ namespace CppWeek2
     private:
         int _number;
         float _float_number;
+    protected:
+        //lskjfkjldksjfwe protected
     };
 }
 
