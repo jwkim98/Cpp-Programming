@@ -11,19 +11,29 @@ namespace CppWeek2
 {
     class MyClass
     {
+
+    ///Private for default
     public:
+        /// Function overloading
         MyClass() = default;
 
         explicit MyClass(int number);
-
+        /// Copy constructor
         MyClass(MyClass& rhs);
 
+        /// Copy-assign operator
         MyClass& operator=(const MyClass& rhs);
 
+        /// Move constructor
         MyClass(MyClass &&rhs) noexcept;
 
+        ~MyClass();
+
+        /// Move assign operator
         MyClass& operator=(MyClass&& rhs) noexcept;
 
+
+        /// Operators
         MyClass operator+(const MyClass &rhs) const;
 
         MyClass operator-(const MyClass &rhs) const;
@@ -44,6 +54,7 @@ namespace CppWeek2
 
     private:
         int _number;
+        float _float_number;
     };
 }
 

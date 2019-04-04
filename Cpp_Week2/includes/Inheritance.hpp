@@ -8,30 +8,46 @@
 #include <iostream>
 
 namespace Inheritance {
-    class ParentClass {
+class Hero {
 
-    public:
-        ParentClass(int member);
+public:
+  Hero(int number);
 
-        ParentClass(ParentClass& _myclass);
+  Hero(Hero &_myclass);
 
-        virtual int getMember() = 0;
+  /// Abstract class
+  virtual void Fly() = 0;
 
-        ~ParentClass();
+  ~Hero();
 
-    protected:
-        int _member = 0;
-    };
+protected:
+  int _member = 0;
+};
 
-    class ChildClass : public ParentClass {
-    public:
-        ChildClass(int member);
+class Ironman : public Hero {
+public:
+  Ironman(int number);
 
-        ~ChildClass();
+  ~Ironman();
 
-        int getMember() override;
+  void Fly() override;
 
-    };
+  void ShootRazer();
+};
+
+class Tony : public Ironman {
+public:
+  Tony();
+};
+
+class Thor : public Hero {
+public:
+  Thor(int number);
+
+  ~Thor();
+
+  void Fly() override;
+};
 } // namespace Inheritance
 
 #endif // CPPSTUDY_INHERITANCE_HPP

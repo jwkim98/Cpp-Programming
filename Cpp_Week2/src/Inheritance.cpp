@@ -5,24 +5,34 @@
 #include "../includes/Inheritance.hpp"
 
 namespace Inheritance {
-    ParentClass::ParentClass(int member)
-            :_member(member)
-    {
-        std::cout << "Constructed!" << std::endl;
-    }
+Hero::Hero(int number) : _member(number) {
+  std::cout << "New Hero!" << std::endl;
+}
 
-    ParentClass::ParentClass(ParentClass& _myclass) { _member = _myclass._member; }
+Hero::Hero(Hero &_myclass) { _member = _myclass._member; }
 
-    ParentClass::~ParentClass() { std::cout << "Base Destructor!" << std::endl; }
+Hero::~Hero() { std::cout << "Bye Bye Hero!" << std::endl; }
 
-    ChildClass::ChildClass(int member)
-            :ParentClass(member)
-    {
-        std::cout << "Yourclass Constructor" << std::endl;
-    }
+Ironman::Ironman(int number) : Hero(number) {
+  std::cout << "I am Iron man!" << std::endl;
+}
 
-    ChildClass::~ChildClass() { std::cout << "Derived Destructor!" << std::endl; }
+Ironman::~Ironman() { std::cout << "Bye Bye Iron Man!!" << std::endl; }
 
-    int ChildClass::getMember() { return _member; }
+void Ironman::Fly() { std::cout << "Iron man flies!" << std::endl; }
+
+void Ironman::ShootRazer() { std::cout << " Beam! " << std::endl; }
+
+Thor::Thor(int number) : Hero(number) {
+  std::cout << "I am Thor!!" << std::endl;
+}
+
+Thor::~Thor() { std::cout << "Bye Bye Thor!! " << std::endl; }
+
+void Thor::Fly() { std::cout << "Thor flies!" << std::endl; }
+
+Tony::Tony() : Ironman(0)
+{
+}
 
 } // namespace Inheritance

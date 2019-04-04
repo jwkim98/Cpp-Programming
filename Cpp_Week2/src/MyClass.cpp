@@ -10,6 +10,7 @@ namespace CppWeek2 {
     MyClass::MyClass(int number)
             :_number(number)
     {
+        //_number = number;
         std::cout << "Constructor called!" << std::endl;
     }
 
@@ -22,7 +23,8 @@ namespace CppWeek2 {
     MyClass& MyClass::operator=(const MyClass& rhs)
     {
         std::cout << "Copy assign-operator called!" << std::endl;
-        _number = rhs._number;
+        this->_number = rhs._number;
+
         return *this;
     }
 
@@ -53,7 +55,7 @@ namespace CppWeek2 {
 
     bool MyClass::operator<(const CppWeek2::MyClass& rhs) const
     {
-        return _number<rhs._number;
+        return _number < rhs._number;
     }
 
     bool MyClass::operator>(const CppWeek2::MyClass& rhs) const
@@ -86,5 +88,7 @@ namespace CppWeek2 {
         os << "_number: " << aClass._number;
         return os;
     }
+
+    MyClass::~MyClass() { std::cout << "Destructor Called!" << std::endl; }
 
 } // namespace CppWeek2
