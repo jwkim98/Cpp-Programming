@@ -17,9 +17,8 @@ public:
   Hero(Hero &_myclass);
 
   Hero();
-
   /// Abstract class
-  virtual void Fly();
+  virtual void Fly(){};
 
   void SaveEarth();
   // Destructor should be virtual if it was inherited by another class
@@ -51,14 +50,14 @@ public:
 
   ~Ironman();
 
-  //void Fly()  override;
+  void Fly()  override;
 
   void ShootLaser();
 };
 
-class Tony : public Ironman {
+class TonyStark : public Ironman {
 public:
-  Tony();
+  TonyStark();
 };
 
 class Thor : public Hero {

@@ -3,4 +3,4 @@ project(CppStudy)
 
 set(CMAKE_CXX_STANDARD 17)
 
-add_executable(CppStudy main.cpp src/MyClass.cpp includes/MyClass.hpp src/Inheritance.cpp includes/Inheritance.hpp)
+add_executable(CppStudy main.cpp src/MyClass.cpp includes/MyClass.hpp src/Inheritance.cpp includes/Inheritance.hpp includes/DeadlyDiamond.hpp src/DeadlyDiamond.cpp)
