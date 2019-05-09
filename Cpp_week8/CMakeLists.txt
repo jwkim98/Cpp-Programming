@@ -3,4 +3,7 @@ project(Cpp_week8)
 
 set(CMAKE_CXX_STANDARD 17)
 
-add_executable(Cpp_week8 main.cpp)
+file(GLOB sources
+        ${CMAKE_CURRENT_SOURCE_DIR}/*.cpp)
+
+add_executable(Cpp_week8 ${sources})

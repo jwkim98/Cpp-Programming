@@ -2,6 +2,7 @@
 #include <functional>
 #include "includes/MyClass.hpp"
 #include "includes/Inheritance.hpp"
+#include "includes/DeadlyDiamond.hpp"
 
 using namespace CppWeek2;
 using namespace Inheritance;
@@ -39,12 +40,21 @@ int main()
 //    myClass3 = (myClass1 + myClass2);
 
 
-Hero* hero = new Ironman(100);
-Hero* hero2 = new Thor(150);
+//Hero* hero = new Ironman(100);
+//Hero* hero2 = new Thor(150);
+//
+//hero2->Fly();
+//
+//delete hero2;
 
-hero2->Fly();
+GrandSon grandSon;
+grandSon.Walk();
 
-delete hero2;
+Parent1 parent1;
+parent1.Walk();
+
+auto a = 3.0/4+3.0/4;
+std::cout<<a<<std::endl;
 
 
     return 0;
