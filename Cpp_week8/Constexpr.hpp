@@ -22,14 +22,6 @@ unsigned int fibonacci2(const unsigned int num);
 
 void ConstExprExample();
 
-struct Move {
-  Move() = default;
-  /// Copy constructor
-  explicit Move(const Move &move) : m_vect(move.m_vect) {}
-  /// Move constructor
-  Move(Move &&move) noexcept : m_vect(std::move(move.m_vect)) {}
-  std::vector<int> m_vect = std::vector<int>(0xFFFFFF, 1);
-};
 
 } // namespace ConstExpr
 

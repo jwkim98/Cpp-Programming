@@ -33,7 +33,8 @@ void ConstExprExample() {
   auto after_result1 = std::chrono::steady_clock::now();
 
   auto before_result2 = std::chrono::steady_clock::now();
-  constexpr unsigned int result2 = fibonacci(25);
+  const int val = 25;
+  constexpr unsigned int result2 = fibonacci(val);
   auto after_result2 = std::chrono::steady_clock::now();
 
   auto before_result3 = std::chrono::steady_clock::now();
@@ -56,23 +57,6 @@ void ConstExprExample() {
                    .count()
             << std::endl;
 
-  Move move1;
-  auto time1 = std::chrono::steady_clock::now();
-  Move move2(move1);
-  auto time2 = std::chrono::steady_clock::now();
-  Move move3(std::move(move1));
-  auto time3 = std::chrono::steady_clock::now();
-
-  std::cout << "Without move semantics : "
-            << std::chrono::duration_cast<std::chrono::nanoseconds>(time2 -
-                                                                     time1)
-                   .count()
-            << std::endl;
-  std::cout << "With move semantics : "
-            << std::chrono::duration_cast<std::chrono::nanoseconds>(time3 -
-                                                                     time2)
-                   .count()
-            << std::endl;
 }
 
 } // namespace ConstExpr
